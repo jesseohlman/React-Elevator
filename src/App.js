@@ -67,11 +67,11 @@ class App extends Component {
         <header className="App-header">
           <h1>elevator</h1>
         </header>
-        <div>current: {this.state.currentFloor} target: {this.state.targetFloor[0]}</div>
+        <div className="floor-display">current: {this.state.currentFloor} target: {this.state.targetFloor[0]}</div>
         <div>doors: {this.state.doors ? "open" : "closed"}</div>
         <form onSubmit={this.handleFloorChange}>
           <button type="submit" className="btn btn-primary" onClick={(e) => this.handleButtonClick(e, 1)}>1</button>
-          <button type="submit" className="btn btn-primary" onClick={(e) => this.handleButtonClick(e, 2)}>2</button>
+          <button type="submit" className="floor-2" onClick={(e) => this.handleButtonClick(e, 2)}>2</button>
           <button type="submit" className="btn btn-primary" onClick={(e) => this.handleButtonClick(e, 3)}>3</button>
           <button type="submit" className="btn btn-primary" onClick={(e) => this.handleButtonClick(e, 4)}>4</button>
           <button type="submit" className="btn btn-primary" onClick={(e) => this.handleButtonClick(e, 5)}>5</button>
