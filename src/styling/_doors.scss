@@ -1,0 +1,28 @@
+
+#doors{
+    background: silver;
+    height: 100%;
+    width: 80%;
+    position: relative;
+
+    #right-door{
+        background: rgb(119, 119, 119);
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 50%;
+        border-right: 5px inset darkgrey;
+    }
+
+    #left-door{
+        background: rgb(119, 119, 119);
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 50%;
+        border-left: 5px inset darkgrey;
+    }
+}
+

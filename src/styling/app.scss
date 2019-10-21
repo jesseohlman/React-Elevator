@@ -1,0 +1,37 @@
+@import "buttons";
+@import "doors";
+
+
+.App{
+    text-align: center;
+}
+
+.floor-display{
+    margin: 2px 50%;
+    padding-bottom: 10px;
+    height: 30px;
+    width: 40px;
+    background: black;
+    border: 3px solid darkgrey;
+    border-radius: 15%;
+    color: rgb(255, 30, 0);
+    position: absolute;
+}
+
+.Elevator {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+
+    position: absolute;
+    margin: 0px;
+    width: 100%;  
+    height: 100%;
+    background: rgb(116, 83, 83);
+  }
+  
+  .App-header {
+    height: 50px;
+    background-color: #282c34;
+    color: white;
+  }

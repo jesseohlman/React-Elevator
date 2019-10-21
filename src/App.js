@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import './styling/app.css';
 
 class App extends Component {
   constructor(props){
@@ -26,6 +26,9 @@ class App extends Component {
       clearInterval(this.timer); //stops floor movment while doors open
       setTimeout(() => {
           this.setState({doors: false, targetFloor: target});
+          var btn = document.getElementById("btn-" + current + "");
+          btn.disabled= false;
+          btn.checked = false;
           this.timer = setInterval(this.changingFloors, 1000); //continues floor movement
       }, 5000);
       return null;
@@ -46,8 +49,9 @@ class App extends Component {
     }
   }
 
-  handleButtonClick(e, floor){
-    e.preventDefault();
+  handleButtonClick(floor){
+    document.getElementById("btn-" + floor + "").disabled= true;
+
     if(!this.state.targetFloor.includes(floor)){
       var target = this.state.targetFloor;
       target.push(floor)
@@ -64,18 +68,54 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>elevator</h1>
-        </header>
-        <div className="floor-display">current: {this.state.currentFloor} target: {this.state.targetFloor[0]}</div>
-        <div>doors: {this.state.doors ? "open" : "closed"}</div>
-        <form onSubmit={this.handleFloorChange}>
-          <button type="submit" className="btn btn-primary" onClick={(e) => this.handleButtonClick(e, 1)}>1</button>
-          <button type="submit" className="floor-2" onClick={(e) => this.handleButtonClick(e, 2)}>2</button>
-          <button type="submit" className="btn btn-primary" onClick={(e) => this.handleButtonClick(e, 3)}>3</button>
-          <button type="submit" className="btn btn-primary" onClick={(e) => this.handleButtonClick(e, 4)}>4</button>
-          <button type="submit" className="btn btn-primary" onClick={(e) => this.handleButtonClick(e, 5)}>5</button>
-        </form>
+          <header className="App-header">
+            <h1 className="floor-display">
+              {this.state.currentFloor}
+              <div>doors: {this.state.doors ? "open" : "closed"}</div>
+            </h1>
+          </header>
+
+        <div className="Elevator">
+
+          
+          
+          <div id="btn-panel">
+
+          <input type="checkbox" id="btn-1" onClick={() => this.handleButtonClick(1)}/>
+              <label class="btn" for="btn-1">
+                <div>1</div>
+              </label>
+
+          <input type="checkbox" id="btn-2" onClick={() => this.handleButtonClick(2)}/>
+            <label class="btn" for="btn-2">
+              <div>2</div>
+            </label>
+
+          <input type="checkbox" id="btn-3" onClick={() => this.handleButtonClick(3)}/>
+            <label class="btn" for="btn-3">
+              <div>3</div>
+            </label>
+
+          <input type="checkbox" id="btn-4" onClick={() => this.handleButtonClick(4)}/>
+            <label class="btn" for="btn-4">
+              <div>4</div>
+            </label>
+
+          <input type="checkbox" id="btn-5" onClick={() => this.handleButtonClick(5)}/>
+            <label class="btn" for="btn-5">
+              <div>5</div>
+            </label>
+
+          <button id="btn-alarm" >@</button>
+          </div>
+
+          <div id="doors">
+            <div id="left-door"></div>
+            <div id="right-door"></div>
+          </div>
+
+
+        </div>
       </div>
     );
   }

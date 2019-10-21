@@ -1,0 +1,66 @@
+
+$btn-highlight: yellow;
+
+
+#btn-panel{
+    background: lightgrey;
+    width: 100px;
+    height: 140px;
+    border: 2px solid black;
+    border-radius: 10%;
+    margin: 250px 20px 0px 20px;
+}
+
+#btn-alarm{
+    background: red;
+    height: 25px;
+    width: 25px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+label{
+    div{
+        background: grey;
+        height: 25px;
+        width: 25px;
+        margin: 10px;
+        border: 1px solid black;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+}
+
+#btn-5 {
+    display: none;
+}
+#btn-5:checked + label > div {
+    background: $btn-highlight;
+}
+#btn-4 {
+    display: none;
+}
+#btn-4:checked + label > div {
+    background: $btn-highlight;
+}
+#btn-3 {
+    display: none;
+}
+#btn-3:checked + label > div {
+    background: $btn-highlight;
+}
+#btn-2 {
+    display: none;
+}
+#btn-2:checked + label > div {
+    background: $btn-highlight;
+}
+#btn-1 {
+    display: none;
+}
+#btn-1:checked + label > div {
+    background: $btn-highlight;
+}
+  
